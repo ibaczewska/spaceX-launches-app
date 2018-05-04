@@ -14,8 +14,9 @@ class LaunchDetails extends React.Component {
         return (
             <div className='container'>
                 <div className='header'>
-                    <div className='header-arrow'> &nbsp;Go back</div>
+                    <span className='header-arrow'> &nbsp;Go back</span>
                     <img className='header-logo' src={logo} width='200' />
+                    <div></div>
                 </div>
                 <div className='content'>
                     <div className='content-left'>
@@ -28,9 +29,9 @@ class LaunchDetails extends React.Component {
                 
                 <div className='links-wrapper'>
                     <h4 className='links-title'>Mission Links</h4>
-                    <button className='links-button'>reddit campaign</button>
-                    <button className='links-button'>presskit</button>
-                    <button className='links-button'>mission video</button>
+                    <a href={'#'} className='links-button'>reddit campaign</a>
+                    <a href={'#'} className='links-button'>presskit</a>
+                    <a href={'#'} className='links-button'>mission video</a>
                 </div>
                 <div className='footer'>
                 <div className='footer-links'>
