@@ -82,20 +82,23 @@ body
         color: $description-color
         font-size: 10px
         font-weight: normal
+        width: 100%
     &__line
         border-top: 2px solid $description-color
         width: 100%
     &__details
         color: $almost-black
         margin-bottom: 20px
-        &__paragraph
-            font-size: 12px
-            letter-spacing: 1px
+    &__paragraph
+        font-size: 12px
+        letter-spacing: 1px
 .rocket
+    width: 100%
     &__column
+        width: 48%
         border-left: 2px dotted $rocket-feature
         padding-left: 15px
-        margin: 20px 100px 20px 0    
+        margin: 20px 0    
         float: left
         text-transform: uppercase
         font-size: 12px
@@ -103,7 +106,27 @@ body
     &__feature
         color: $rocket-feature
         margin-right: 2px
-        
+    &__description
+        clear: both
+        padding-bottom: 40px
+
+.pad
+    width: 100%
+    &__column
+        width: 44%
+        border-left: 2px dotted $rocket-feature
+        padding-left: 15px
+        margin: 20px 0    
+        float: left
+        text-transform: uppercase
+        font-size: 12px
+        letter-spacing: 1px
+    &__feature
+        color: $rocket-feature
+        margin-right: 2px
+    &__description
+        clear: both
+        padding-bottom: 40px
 .links
     &__wrapper 
         width: 100%
