@@ -1,196 +1,23 @@
 @import "~styles/variables"  // '~' informs sass-loader that is not relative path
+@import "~styles/header"
+@import "~styles/content"
+@import "~styles/links"
+@import "~styles/footer"
+
 
 body
     margin: 0
     padding: 0
     font-family: 'Open Sans', sans-serif;
     
-.header 
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-    background-color: $header-background-color
-    flex-basis: 100%
-    height: 60px
-    color: $desert
-    &__arrow
-        margin-left: 20px
-        letter-spacing: 1px
-        text-transform: uppercase
-        font-size: 10px
-        font-weight: bold
-        letter-spacing: 9px
-        &:before
-            content: url('../assets/arrow_pointer.png')
-        &__line 
-            display: inline-block
-            border-top: 1px solid $arrow-line
-            height: 1px
-            width: 30px  
-            position: relative
-            top: -3px
+
 
                
-.content 
-    background-color: $background-color
-    display: flex
-    flex-basis: 100%
-    
-
-.content__left 
-    flex: 1 1 50%
-
-.content__right
-    flex: 1 1 50%
-
-.item
-    display: flex
-    justify-content: flex-start
-    flex-direction: column
-    align-items: flex-start
-    text-transform: uppercase
-    letter-spacing: 1px
-    margin-left: 20px
-    margin-top: 50px
-    &__date 
-        font-size: 10px
-        margin-bottom: 10px
-        margin-top: 10px
-        color: $cool-gray
-        letter-spacing: 9px
-    &__title 
-        font-size: 30px
-        font-weight: bold
-        color: $almost-black
-        margin: 0 0 5px
-        letter-spacing: 4px
-    &__timer 
-        font-size: 10px
-        color: $almost-black
-        
-.description 
-    display: flex
-    justify-content: flex-start
-    flex-direction: column
-    align-items: flex-start
-    margin-right: 20px
-    margin-top: 50px
-    &__title
-        text-transform: uppercase
-        letter-spacing: 12px
-        color: $description-color
-        font-size: 10px
-        font-weight: normal
-        width: 100%
-    &__line
-        border-top: 2px solid $description-color
-        width: 100%
-    &__details
-        color: $almost-black
-        margin-bottom: 20px
-    &__paragraph
-        font-size: 12px
-        letter-spacing: 1px
-.rocket
-    width: 100%
-    &__column
-        width: 48%
-        border-left: 2px dotted $rocket-feature
-        padding-left: 15px
-        margin: 20px 0    
-        float: left
-        text-transform: uppercase
-        font-size: 12px
-        letter-spacing: 1px
-    &__feature
-        color: $rocket-feature
-        margin-right: 2px
-    &__description
-        clear: both
-        padding-bottom: 40px
-
-.pad
-    width: 100%
-    &__column
-        width: 44%
-        border-left: 2px dotted $rocket-feature
-        padding-left: 15px
-        margin: 20px 0    
-        float: left
-        text-transform: uppercase
-        font-size: 12px
-        letter-spacing: 1px
-    &__feature
-        color: $rocket-feature
-        margin-right: 2px
-    &__description
-        clear: both
-        padding-bottom: 40px
-
-.links
-    &__wrapper    
-        text-align: center
-        width: 100%
-        min-height: 470px
-        background-color: $brownish-grey
-        background-image: url('../assets/rocket.png')
-        background-size: contain
-        background-repeat: no-repeat
-        background-position-x: 50%
-        
-    &__title
-        padding-top: 320px
-        padding-bottom: 12px
-        text-transform: uppercase
-        font-size: 20px
-        color: $title-color
-        font-weight: normal
-        letter-spacing: 14px
-        text-align: center
-        
-    &__button
-        background-color: transpatent
-        border: 2px solid $button-color
-        border-radius: 15px
-        padding: 6px 22px
-        margin-right: 8px
-        margin-left: 8px
-        text-decoration: none
-        color: $button-color
-        text-transform: uppercase
-        font-size: 11px
-        font-weight: bold
-        letter-spacing: 1px
-        &:hover
-            color: $hover-color
-            border-color: $hover-color
 
 
 
-.footer 
-    display: flex
-    align-items: center
-    background-color: $dark-grey
-    flex-basis: 100%
-    height: 60px
-    text-transform: uppercase
-    font-size: 10px
-    font-weight: normal
-    letter-spacing: 1px
-    color: $brownish-grey
-    &__links 
-        flex: 1
-        margin-left: 20px
-        &__item
-        word-spacing: 10px
-        & a
-            text-decoration: none
-            color: $cool-gray
-        &__desc 
-            word-spacing: 1px
 
-    &__copyright
-        margin-right: 20px
+
+
     
        
