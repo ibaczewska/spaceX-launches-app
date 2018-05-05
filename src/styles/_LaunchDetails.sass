@@ -36,13 +36,13 @@ body
     background-color: $background-color
     display: flex
     flex-basis: 100%
-    height: 500px
+    
 
 .content__left 
-    flex: 1 1 50px
+    flex: 1 1 50%
 
 .content__right
-    flex: 1 1 50px
+    flex: 1 1 50%
 
 .item
     display: flex
@@ -58,11 +58,13 @@ body
         margin-bottom: 10px
         margin-top: 10px
         color: $cool-gray
+        letter-spacing: 9px
     &__title 
-        font-size: 16px
+        font-size: 30px
         font-weight: bold
         color: $almost-black
         margin: 0 0 5px
+        letter-spacing: 4px
     &__timer 
         font-size: 10px
         color: $almost-black
@@ -76,9 +78,10 @@ body
     margin-top: 50px
     &__title
         text-transform: uppercase
-        letter-spacing: 9px
+        letter-spacing: 12px
         color: $description-color
-        font-size: 12px
+        font-size: 10px
+        font-weight: normal
     &__line
         border-top: 2px solid $description-color
         width: 100%
@@ -86,10 +89,20 @@ body
         color: $almost-black
         margin-bottom: 20px
         &__paragraph
-            width: 700px
             font-size: 12px
             letter-spacing: 1px
-            
+.rocket
+    &__column
+        border-left: 2px dotted $rocket-feature
+        padding-left: 15px
+        margin: 20px 100px 20px 0    
+        float: left
+        text-transform: uppercase
+        font-size: 12px
+        letter-spacing: 1px
+    &__feature
+        color: $rocket-feature
+        margin-right: 2px
         
 .links
     &__wrapper 

@@ -25,7 +25,7 @@ class LaunchDetails extends React.Component {
                         <div className="item__title">Falcon 9</div>
                         <div className="item__timer">20 days 11 hrs 34 mins to start</div>
                         <div className="item__logo">
-                            <img src={itemLogo} width='150'/>
+                            <img src={itemLogo} width='180'/>
                         </div>
                     </div>
                     <div className="content__right description">
@@ -37,6 +37,17 @@ class LaunchDetails extends React.Component {
                         <div className="description__rocket">
                             <h5 className="description__title">Rocket</h5>
                             <div className="description__line"></div>  
+                                <div className="rocket__column">
+                                    <p><span className="rocket__feature">Name:</span><span className="rocket__value">Falcon 1</span></p>
+                                    <p><span className="rocket__feature">Company: </span><span className="rocket__value">Falcon 1</span></p>
+                                    <p><span className="rocket__feature">Height: </span><span className="rocket__value">Falcon 1</span></p>
+                                    <p><span className="rocket__feature">Diameter: </span><span className="rocket__value">Falcon 1</span></p>
+                                    <p><span className="rocket__feature">Mass: </span><span className="rocket__value">Falcon 1</span></p>                              
+                                </div>
+                                <div className="rocket__column">
+                                <p><span className="rocket__feature">Name</span><span className="rocket__value">Falcon 1</span></p>
+                                    <p><span className="rocket__feature">Name</span><span className="rocket__value">Falcon 1</span></p>
+                                </div>
                         </div>
                         <div className="description__pad">                
                             <h5 className="description__title ">Launch pad</h5>
