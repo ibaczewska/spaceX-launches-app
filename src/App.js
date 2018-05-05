@@ -10,7 +10,6 @@ class App extends React.Component { // eslint-disable-line react/prefer-stateles
   render() {
     return (
       <main>
-        
         <LaunchDetails
           launch={launch}
           launchSite={launchSite}

@@ -5,12 +5,6 @@ body
     padding: 0
     font-family: 'Open Sans', sans-serif;
     
-
-
-.container 
-    display: flex
-    flex-wrap: wrap
-
 .header 
     display: flex
     flex-direction: row
@@ -20,7 +14,7 @@ body
     flex-basis: 100%
     height: 60px
     color: $desert
-    &-arrow
+    &__arrow
         margin-left: 20px
         letter-spacing: 1px
         text-transform: uppercase
@@ -29,7 +23,13 @@ body
         letter-spacing: 9px
         &:before
             content: url('../assets/arrow_pointer.png')
-           
+        &__line 
+            display: inline-block
+            border-top: 1px solid $arrow-line
+            height: 1px
+            width: 30px  
+            position: relative
+            top: -3px
 
                
 .content 
@@ -38,11 +38,11 @@ body
     flex-basis: 100%
     height: 500px
 
-.content-left 
-    flex: 6
+.content__left 
+    flex: 1 1 50px
 
-.content-right
-    flex: 6
+.content__right
+    flex: 1 1 50px
 
 .item
     display: flex
@@ -53,23 +53,46 @@ body
     letter-spacing: 1px
     margin-left: 20px
     margin-top: 50px
-    &-date 
+    &__date 
         font-size: 10px
         margin-bottom: 10px
         margin-top: 10px
         color: $cool-gray
-    &-title 
+    &__title 
         font-size: 16px
         font-weight: bold
         color: $almost-black
         margin: 0 0 5px
-    &-timer 
+    &__timer 
         font-size: 10px
         color: $almost-black
-
+        
+.description 
+    display: flex
+    justify-content: flex-start
+    flex-direction: column
+    align-items: flex-start
+    margin-right: 20px
+    margin-top: 50px
+    &__title
+        text-transform: uppercase
+        letter-spacing: 9px
+        color: $description-color
+        font-size: 12px
+    &__line
+        border-top: 2px solid $description-color
+        width: 100%
+    &__details
+        color: $almost-black
+        margin-bottom: 20px
+        &__paragraph
+            width: 700px
+            font-size: 12px
+            letter-spacing: 1px
+            
         
 .links
-    &-wrapper 
+    &__wrapper 
         width: 100%
         height: 500px
         background-color: $brownish-grey
@@ -78,9 +101,7 @@ body
         background-repeat: no-repeat
         background-position-x: 50%
         
-    &-title 
-        
-    &-button 
+    &__button 
         background-color: transpatent
         border: 2px solid $cool-gray
         border-radius: 15px
@@ -104,18 +125,18 @@ body
     font-weight: normal
     letter-spacing: 1px
     color: $brownish-grey
-    &-links 
+    &__links 
         flex: 1
         margin-left: 20px
-        &-item
+        &__item
         word-spacing: 10px
         & a
             text-decoration: none
             color: $cool-gray
-        &-desc 
+        &__desc 
             word-spacing: 1px
 
-    &-copyright
+    &__copyright
         margin-right: 20px
     
        
