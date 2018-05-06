@@ -7,9 +7,7 @@ import Footer from '../components/Footer'
 
 
 class LaunchDetails extends React.Component {
-    
     render() {
-        const { launch, launchSite, rocket} = this.props;
     
         return (
             <div>
