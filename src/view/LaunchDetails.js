@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/_LaunchDetails.sass';
-import Header from '../components/Header'
-import Content from '../components/Content'
-import Links from '../components/Links'
+import Header from '../components/details/Header'
+import Content from '../components/details/Content'
+import Links from '../components/details/Links'
 import Footer from '../components/Footer'
 
 

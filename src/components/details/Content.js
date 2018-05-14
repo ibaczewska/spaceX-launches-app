@@ -1,8 +1,8 @@
 import React from 'react';
-import itemLogo from '../assets/item-logo.png';
-import launch from'../assets/launch.json';
-import rocket from '../assets/rocket.json';
-import launchSite from '../assets/launch_site.json'
+import itemLogo from '../../assets/item-logo.png';
+import launch from'../../assets/launch.json';
+import rocket from '../../assets/rocket.json';
+import launchSite from '../../assets/launch_site.json'
 import {format, distanceInWordsToNow} from 'date-fns';
 
 class Content extends React.Component {
