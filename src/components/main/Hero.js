@@ -2,7 +2,7 @@ import React from 'react';
 import heroLogo from '../../assets/space_x_logo_bw_centered.png';
 import heroMoon from '../../assets/moon.png';
 import Button from '../main/Button';
-
+import launches from '../../assets/launches.json';
 
 
 class Hero extends React.Component {
