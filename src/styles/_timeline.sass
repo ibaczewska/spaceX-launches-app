@@ -1,5 +1,7 @@
 .timeline
     &__wrapper
+        background-color: $almost-black
+        color: $main-text-color
         position: relative
         padding-top: 40px
         padding-bottom: 40px
@@ -7,7 +9,72 @@
             content: ''
             position: absolute
             top: 0
-            left: 28px
+            left: 50%
             height: 100%
             border-width: 1px
             border-style: dashed
+            margin-left: -2px
+        &__block
+            background-color: $almost-black
+            position: relative
+            display: flex
+            flex-direction: row
+            flex-wrap: wrap
+            margin-bottom: 40px
+            @media screen and (min-width: 768px)
+                flex-wrap: nowrap
+                align-items: flex-start
+                justify-content: space-between
+        &:last-child
+                margin-bottom: 0px
+        &:nth-child(odd)
+            .timeline__content
+                order: -1
+        &:nth-child(even)
+            .timeline__content
+    &__dot
+        margin-left: 49.7%
+        height: 5px
+        width: 5px
+        background-color:#d6d6d6
+        border-radius: 50%
+        border: 1px solid #e8e8e8            
+    &__content
+        width: calc(100% - 80px)
+        margin-left: 80px
+        @media only screen and (min-width: 768px) 
+            width: 46%
+            width: calc(50% - 70px)
+            margin-left: 0
+    &__content
+        margin-bottom: 10px
+        padding: 20px
+    &__separator
+        display: inline-block
+        border-top: 1px solid $arrow-line
+        height: 2px
+        width: 90%  
+        position: relative
+        top: 9px
+        bottom: 13px
+        &:after
+            content: url('../assets/arrow_pointer.png')
+            display: inline
+            left: 50%    
+    &__rocket
+        font-size: 12px
+        letter-spacing: 3px
+        text-transform: uppercase
+        word-spacing: 3px
+        &__feature
+            color: $cool-gray
+
+
+
+.timeline__block:nth-child(odd) 
+.timeline__content
+    order: -1
+
+.timeline__block:nth-child(even) 
+.timeline__content
+    
