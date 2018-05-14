@@ -14,26 +14,17 @@
             border-width: 1px
             border-style: dashed
             margin-left: -2px
-        &__block
-            background-color: $almost-black
-            position: relative
-            display: flex
-            flex-direction: row
-            flex-wrap: wrap
-            margin-bottom: 40px
-            @media screen and (min-width: 768px)
-                flex-wrap: nowrap
-                align-items: flex-start
-                justify-content: space-between
-        &:last-child
-                margin-bottom: 0px
-        &:nth-child(odd)
-            .timeline__content
-                order: -1
-        &:nth-child(even)
-            .timeline__content
+    &__block
+        background-color: $almost-black
+        display: flex
+        flex-direction: row
+        flex-wrap: wrap
+        margin-bottom: 40px
+        flex-wrap: nowrap
+        align-items: flex-start
+        justify-content: space-between
     &__dot
-        margin-left: 49.7%
+        margin-left: 49.8%
         height: 5px
         width: 5px
         background-color:#d6d6d6
@@ -53,28 +44,35 @@
         display: inline-block
         border-top: 1px solid $arrow-line
         height: 2px
-        width: 90%  
+        width: 100%  
         position: relative
         top: 9px
         bottom: 13px
-        &:after
-            content: url('../assets/arrow_pointer.png')
-            display: inline
-            left: 50%    
+        &__arrow
+            position: absolute
+            left: 100%
+            top: -5px
+            -moz-transform: scaleX(-1)
+            -o-transform: scaleX(-1)
+            -webkit-transform: scaleX(-1)
+            transform: scaleX(-1)    
+               
     &__rocket
         font-size: 12px
         letter-spacing: 3px
         text-transform: uppercase
         word-spacing: 3px
+        padding-top: 20px
         &__feature
             color: $cool-gray
 
-
-
-.timeline__block:nth-child(odd) 
-.timeline__content
+.timeline__block:nth-child(odd) .timeline__content
     order: -1
 
-.timeline__block:nth-child(even) 
-.timeline__content
-    
+.timeline__block:nth-child(even) .timeline__content
+    order: 1
+
+ 
+
+
+
