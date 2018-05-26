@@ -6,7 +6,19 @@ import launches from '../../assets/launches.json';
 
 
 class Hero extends React.Component {
-    
+    state = {
+        launches: []
+    }
+    async componentDidMount() {
+        const url ='https://api.spacexdata.com/v2/launches/all';
+        const result = await fetch(url);
+        const launches = await result.json();
+        this.setState({launches});
+        
+        // const filteredButtonsNames = 
+        //     this.setState({filteredButtonsNames});
+        //     console.log(this.state.filteredButtonsNames);
+    }
     render() {
     
         return (
@@ -18,10 +30,14 @@ class Hero extends React.Component {
                         <img className="hero__item__logo"src={heroLogo} width="400" alt="SpaceX logo"/>
                         <h4 className="hero__item__paragraph">Launches 2018</h4>
                         <div className="button__wrapper">
-                            <Button buttonText="All rockets"/>
-                            <Button buttonText="Falcon 9"/>
+                        {
+                            this.state.launches.map( flight =>  (<Button key={flight.rocket.rocket_id} flight={flight}  />
+                            ))
+                        }
+                           
+                            {/* <Button buttonText="Falcon 9"/>
                             <Button buttonText="Falcon Heavy"/>
-                            <Button buttonText="Dragon"/>
+                            <Button buttonText="Dragon"/> */}
                         </div>
                         
                         
@@ -33,5 +49,7 @@ class Hero extends React.Component {
     }
 
 }
+
+
 
 export default Hero;

@@ -10,12 +10,12 @@ class LaunchDetails extends React.Component {
     render() {
     
         return (
-            <div>
+            <main>
                 <Header />
                 <Content />
                 <Links />
                 <Footer />            
-            </div>
+            </main>
         )
     }
 

@@ -3,21 +3,26 @@ import '../styles/_LaunchDetails.sass';
 import Hero from '../components/main/Hero';
 import Timeline from '../components/main/Timeline';
 import Footer from '../components/Footer';
+import 'babel-polyfill';
 
 
 
-class LaunchesList extends React.Component {
+export default class LaunchesList extends React.Component {
+    state = {
+        view: 'list'
+    }
+   
     render() {
     
         return (
-            <div>
+            <main>
                <Hero />
                <Timeline />
                <Footer />            
-            </div>
+            </main>
         )
     }
 
 }
 
-export default LaunchesList;
+// export default LaunchesList;
