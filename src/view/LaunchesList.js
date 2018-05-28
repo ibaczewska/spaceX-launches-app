@@ -11,14 +11,15 @@ export default class LaunchesList extends React.Component {
     state = {
        launches: [],
        buttonNames: [],
-       selectedButton: 'All'       
+       selectedButton: 'All',
+       loading: true
     }
    async componentDidMount() {
         const res = await fetch('https://api.spacexdata.com/v2/launches/all')
         const launches = await res.json()
         const buttonNames = this.getUniqueRocketNames(launches)
         buttonNames.unshift('All')
-        this.setState({ launches, buttonNames })
+        this.setState({ launches, buttonNames, loading: false })
    }
    getUniqueRocketNames(launches) {
     const uniqueRocketNames = []
@@ -47,15 +48,18 @@ export default class LaunchesList extends React.Component {
        this.setState({selectedButton})
    }
     render() {
-        const {launches, buttonNames, selectedButton} = this.state
+        const {launches, buttonNames, selectedButton, loading} = this.state
+        
+        
         const filteredLaunches = selectedButton !== 'All'
-            ? launches.filter(launch => launch.rocket.rocket_name === selectedButton)
-            : launches 
-       
+        ? launches.filter(launch => launch.rocket.rocket_name === selectedButton)
+        : launches 
         return (
             <main>
                <Hero buttonNames={buttonNames} onButtonClick={this.updateSelectedButton}/>
-               <Timeline launches={filteredLaunches} />
+               {
+                    !loading && <Timeline onTimelineClick={this.props.onTimelineClick} launches={filteredLaunches} />
+               }
                <Footer />            
             </main>
         )
@@ -63,3 +67,10 @@ export default class LaunchesList extends React.Component {
 }
 
 // export default LaunchesList;
+
+/*
+{
+    condition ? component : null
+    !condition && component
+}
+*/

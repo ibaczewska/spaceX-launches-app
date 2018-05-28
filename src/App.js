@@ -8,19 +8,25 @@ import LaunchesList from './view/LaunchesList';
 
 class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
   state = {
-    view: "list"
+    view: "list",
+    selectedLaunch: {}
   }
+
+  selectLaunch = (selectedLaunch) => {
+    this.setState({view: 'details', selectedLaunch})
+  }
+
   render() {
    
       switch(this.state.view)
       {
         case 'list':
           return (
-              <LaunchesList/>
+              <LaunchesList onTimelineClick={this.selectLaunch}/>
           )
         case 'details':
           return (
-              <LaunchDetails/>
+              <LaunchDetails launch={this.state.selectedLaunch}/>
           )
         default:
           return <p>ups</p>
