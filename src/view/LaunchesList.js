@@ -9,20 +9,57 @@ import 'babel-polyfill';
 
 export default class LaunchesList extends React.Component {
     state = {
-        view: 'list'
+       launches: [],
+       buttonNames: [],
+       selectedButton: 'All'       
     }
-   
+   async componentDidMount() {
+        const res = await fetch('https://api.spacexdata.com/v2/launches/all')
+        const launches = await res.json()
+        const buttonNames = this.getUniqueRocketNames(launches)
+        buttonNames.unshift('All')
+        this.setState({ launches, buttonNames })
+   }
+   getUniqueRocketNames(launches) {
+    const uniqueRocketNames = []
+
+    for(const launch of launches) {
+        const launchName = launch.rocket.rocket_name
+        if(!uniqueRocketNames.includes(launchName)) {
+            uniqueRocketNames.push(launchName)            
+        }
+    }
+    return uniqueRocketNames
+   }
+
+// getUniqueRocketNames(launches) {
+//     return launches.reduce(
+//         (uniqueRocketNames, {rocket: {rocket_name}}) => 
+//             uniqueRocketNames.includes(rocket_name)
+//                 ? uniqueRocketNames
+//                 : [...uniqueRocketNames, rocket_name]
+//     , [])
+// }
+
+// const variab = condition ? valueIfTrue : valueIfFalse
+
+   updateSelectedButton = (selectedButton) => {
+       this.setState({selectedButton})
+   }
     render() {
-    
+        const {launches, buttonNames, selectedButton} = this.state
+        const filteredLaunches = selectedButton !== 'All'
+            ? launches.filter(launch => launch.rocket.rocket_name === selectedButton)
+            : launches 
+       
         return (
             <main>
-               <Hero />
-               <Timeline />
+               <Hero buttonNames={buttonNames} onButtonClick={this.updateSelectedButton}/>
+               <Timeline launches={filteredLaunches} />
                <Footer />            
             </main>
         )
     }
-
 }
 
 // export default LaunchesList;

@@ -6,20 +6,15 @@ import launches from '../../assets/launches.json';
 
 
 class Timeline extends React.Component {
-    
     render() {
-        
         return (
             <div className="timeline__wrapper">
-               <TimelineBlock />
-               <TimelineBlock />
-               <TimelineBlock />
-               <TimelineBlock />
-               <TimelineBlock />
-               <TimelineBlock />               
+            {
+                this.props.launches.map(
+                  launch => <TimelineBlock launch={launch} key={launch.flight_number}/>
+                )
+            }               
             </div>
-
-            
 
         )
     }
@@ -27,3 +22,10 @@ class Timeline extends React.Component {
 }
 
 export default Timeline;
+
+// [b, a, c, d]
+
+// Child a key=0
+// Child b key=1
+// Child c key=2
+// Child d key=3
